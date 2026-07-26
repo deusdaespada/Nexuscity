@@ -1,0 +1,17 @@
+run = "python3 main.py"
+entrypoint = "main.py"
+modules = ["python-3.11"]
+
+[nix]
+channel = "stable-23_11"
+
+[env]
+PYTHONUNBUFFERED = "1"
+
+[deployment]
+run = ["python3", "main.py"]
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 8000
+externalPort = 80
